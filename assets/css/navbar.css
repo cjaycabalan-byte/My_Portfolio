@@ -1,0 +1,106 @@
+/* ==========================
+   NAVIGATION BAR
+========================== */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4db8ff;
+}
+
+.navbar ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar ul.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar ul.nav-links li a:hover {
+  color: #ff4db8;
+}
+
+/* ==========================
+   HAMBURGER MENU
+========================== */
+.navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.navbar .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Toggle animation for hamburger */
+.navbar .hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar .hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ==========================
+   RESPONSIVE FOR MOBILE
+========================== */
+@media (max-width: 900px) {
+  .navbar ul.nav-links {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 15px 0;
+  }
+
+  .navbar ul.nav-links.nav-active {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+  }
+}
+
+/* Smallest screens - 375px */
+@media only screen and (max-width: 375px) {
+  .navbar ul.nav-links li a {
+    font-size: 16px;
+  }
+
+  .navbar .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+}

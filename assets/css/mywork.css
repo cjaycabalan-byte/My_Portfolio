@@ -1,0 +1,299 @@
+/* ==========================
+   GLOBAL STYLE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+
+  color: #fff;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 5%;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* ==========================
+   NAVIGATION BAR
+========================== */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4db8ff;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ff4db8;
+}
+
+/* Hamburger menu default hidden */
+.navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1500;
+}
+
+.navbar .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hamburger toggle animation */
+.navbar .hamburger.toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar .hamburger.toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .hamburger.toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .navbar .nav-links.nav-active {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar .nav-links li a {
+    font-size: 16px;
+  }
+
+  .navbar .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+}
+
+
+/* ==========================
+   MY WORK SECTION
+========================== */
+.mywork-section {
+    padding: 100px 5%;
+    color: #fff;
+    text-align: center;
+}
+
+.mywork-section .section-title {
+    font-size: 40px;
+    color: #4db8ff;
+    margin-bottom: 50px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    position: relative;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(77, 184, 255, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 50px #4db8ff, 0 0 70px #ff4db8;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-link {
+    position: relative;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(77, 184, 255, 0.8);
+    color: #000;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-link:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 900px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+  }
+
+  nav ul.nav-active {
+    display: flex;
+  }
+
+  nav .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+nav .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile specific 375px */
+@media only screen and (max-width: 375px) {
+  nav {
+    padding: 15px 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  nav ul.nav-active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  nav .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  nav .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .project-overlay {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

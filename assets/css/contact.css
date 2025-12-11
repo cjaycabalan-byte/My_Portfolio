@@ -1,0 +1,192 @@
+/* ==========================
+   GLOBAL STYLE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: #4db8ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ff4db8;
+}
+
+/* ==========================
+   NAVIGATION BAR
+========================== */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4db8ff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4db8;
+}
+
+/* Hamburger menu */
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+nav .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ==========================
+   CONTACT SECTION
+========================== */
+.contact-section {
+    padding: 120px 5% 80px;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 40px;
+    color: #4db8ff;
+    margin-bottom: 60px;
+}
+
+/* Contact cards container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Single contact card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 250px;
+    box-shadow: 0 0 25px rgba(77, 184, 255, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 50px #4db8ff, 0 0 70px #ff4db8;
+}
+
+.contact-card .icon {
+    font-size: 40px;
+    color: #4db8ff;
+    margin-bottom: 20px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.contact-card:hover .icon {
+    color: #ff4db8;
+}
+
+.contact-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    nav ul.nav-active {
+        display: flex;
+    }
+
+    nav .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    nav .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 375px) {
+    .contact-section {
+        padding: 140px 10px 80px;
+    }
+
+    .contact-section .section-title {
+        font-size: 32px;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+}
